@@ -161,6 +161,7 @@ public class FlashcardSet {
         return this.set.get(term);
     }
     public int getErrors (String term) {
+        term = term.replaceAll("\\\"","");
         return this.errors.getOrDefault(term,-1);
     }
 

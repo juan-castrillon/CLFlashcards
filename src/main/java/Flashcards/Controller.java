@@ -62,7 +62,7 @@ public class Controller {
             log(answer);
             if (set.ask(question,answer)) { //If the users answer was correct
                 show("Correct answer.");
-                return;
+                continue;
             } else {
                 String correctAnswer = set.getDefinition(question);
                 if (set.hasDefinition(answer)) {
@@ -117,6 +117,7 @@ public class Controller {
     public boolean execute() {
         boolean exit = false;
         String command = GUI.read();
+        log(command);
         switch (command) {
             case "add" :
                 add();

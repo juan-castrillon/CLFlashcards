@@ -1,0 +1,22 @@
+Input the action (add, remove, import, export, ask, log, hardest card, reset stats, exit):
+File name:
+src/main/resources/dummyCard.txt
+3 cards have been loaded.
+Input the action (add, remove, import, export, ask, log, hardest card, reset stats, exit):
+How many times?
+3
+Print the definition of "Germany":
+
+Berlin
+Correct answer.
+Print the definition of "Germany":
+
+Oe
+Wrong answer. The correct one is "Berlin".
+Print the definition of "Spain":
+
+Madrid
+Correct answer.
+Input the action (add, remove, import, export, ask, log, hardest card, reset stats, exit):
+File Name:
+src/main/resources/dummylog.txt
