@@ -81,6 +81,9 @@ public class Controller {
         String fileName = GUI.read(); //Ask the user for a filename
         log(fileName);
         File file = new File(fileName); //Create a File object to pass to the set method
+        fromFile(file);
+    }
+    public void fromFile(File file) {
         int added = set.fromFile(file);
         show( added >= 0 ? added + " cards have been loaded." : "File not found.");
     }
@@ -89,7 +92,10 @@ public class Controller {
         String name = GUI.read();//Ask the user for a filename
         log(name);
         File writingFile = new File(name);//Create a File object to pass to the set method
-        int saved = set.toFile(writingFile);
+        toFile(writingFile);
+    }
+    public void toFile(File file){
+        int saved = set.toFile(file);
         show( saved >= 0 ? saved + " cards have been saved." : "Error while exporting");
     }
     public void getHardest() {
