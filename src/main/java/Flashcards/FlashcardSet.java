@@ -12,8 +12,8 @@ import java.util.*;
  *  terms, definitions and mistakes made in each card and methods to interact with the class.
  */
 public class FlashcardSet {
-    private Map <String, String> set; //Structure representing Term - Definition pairs
-    private Map <String, Integer> errors; //Structure relating Term - Mistakes
+    private final Map <String, String> set; //Structure representing Term - Definition pairs
+    private final Map <String, Integer> errors; //Structure relating Term - Mistakes
 
     /**
      * Constructor for the class
@@ -28,8 +28,8 @@ public class FlashcardSet {
      * [User Interaction Based]
      */
     public void add(String term, String definition) {
-        this.set.putIfAbsent(term,definition); //Save the card with its definition
-        this.errors.put(term, 0); //Initialize the new card with 0 mistakes
+        this.set.putIfAbsent(capitalize(term),capitalize(definition)); //Save the card with its definition
+        this.errors.put(capitalize(term), 0); //Initialize the new card with 0 mistakes
     }
     /**
      * Method that allows to remove a card from the set
@@ -69,8 +69,8 @@ public class FlashcardSet {
             while (fileReader.hasNextLine()) { //Read all the lines in the file
                 line = fileReader.nextLine(); //Process each line
                 result = line.split(" : "); //Getting the data according to the previously specified format
-                this.set.put(result[0],result[1]);
-                this.errors.put(result[0],Integer.parseInt(result[2]));
+                this.set.put(capitalize(result[0]),capitalize(result[1]));
+                this.errors.put(capitalize(result[0]),Integer.parseInt(result[2]));
                 counter++; //One more card was added
             }
             return counter;
@@ -119,10 +119,9 @@ public class FlashcardSet {
                     keys.add("\"" + key + "\"");
                 }
             }
-            String result = keys.toString() //Remove the [] from the standard toString representation of a set
+            return keys.toString() //Remove the [] from the standard toString representation of a set
                     .replace("[", "")
                     .replace("]", "");
-            return result;
         }
     }
     /**
@@ -130,15 +129,14 @@ public class FlashcardSet {
      * Resetting means making all cards in the set have 0 mistakes
      */
     public void resetErrors() {
-        for (String key : this.errors.keySet()) {
-            this.errors.put(key,0);
-        }
+        this.errors.replaceAll((k, v) -> 0);
     }
     public boolean hasTerm (String term) {
-        return this.set.containsKey(term);
+
+        return this.set.containsKey(capitalize(term));
     }
     public boolean hasDefinition(String definition) {
-        return this.set.containsValue(definition);
+        return this.set.containsValue(capitalize(definition));
     }
     public String getRandomCard() {
         Random random = new Random();
@@ -147,6 +145,7 @@ public class FlashcardSet {
         return keys[index]; //Get a random card
     }
     public String getCardByDefinition (String definition) {
+        definition = capitalize(definition);
         String result = "";
         for (String t1 : this.set.keySet()) {
             if(this.set.get(t1).equals(definition)) { //Search for the card that has the inputted definition, and let the user know about the mistake
@@ -157,11 +156,14 @@ public class FlashcardSet {
         return result;
     }
     public String getDefinition(String term) {
-        return this.set.get(term);
+        return this.set.get(capitalize(term));
     }
     public int getErrors (String term) {
-        term = term.replaceAll("\\\"","");
+        term = term.split(",")[0].replaceAll("\"","");
         return this.errors.getOrDefault(term,-1);
+    }
+    private String capitalize(String word){
+        return word.substring(0,1).toUpperCase() + word.substring(1).toLowerCase();
     }
 
 }

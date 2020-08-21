@@ -1,12 +1,10 @@
 package Flashcards;
 
 import java.io.File;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Controller {
-    private CommandLineUI GUI;
-    private FlashcardSet set;
+    private final CommandLineUI GUI;
+    private final FlashcardSet set;
 
     public Controller() {
         this.GUI = new CommandLineUI();
@@ -62,11 +60,11 @@ public class Controller {
             log(answer);
             if (set.ask(question,answer)) { //If the users answer was correct
                 show("Correct answer.");
-                continue;
             } else {
                 String correctAnswer = set.getDefinition(question);
                 if (set.hasDefinition(answer)) {
                     String existing = set.getCardByDefinition(answer);
+                    //TODO: Fix
                     show(String.format("Wrong answer. The correct one is \"%s\", " +
                             "you've just written the definition of " +
                             "\"%s\".\n", correctAnswer, existing));
