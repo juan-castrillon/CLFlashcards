@@ -64,7 +64,6 @@ public class Controller {
                 String correctAnswer = set.getDefinition(question);
                 if (set.hasDefinition(answer)) {
                     String existing = set.getCardByDefinition(answer);
-                    //TODO: Fix
                     show(String.format("Wrong answer. The correct one is \"%s\", " +
                             "you've just written the definition of " +
                             "\"%s\".\n", correctAnswer, existing));
