@@ -37,10 +37,7 @@ public class CommandLineUI {
 
     public String read() {
         //TODO: Implement automatic logging
-        if (this.in.hasNextLine()) {
-            return this.in.nextLine();
-        }
-        return "oe";
+        return this.in.nextLine();
     }
 
     /**
