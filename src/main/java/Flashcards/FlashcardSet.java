@@ -9,8 +9,7 @@ import java.util.*;
 
 /**
  *  Class for representing a flashcard set, it includes capabilities to store
- *  terms, definitions and mistakes made in each card, as well as a logging
- *  capability and methods to interact with the class.
+ *  terms, definitions and mistakes made in each card and methods to interact with the class.
  */
 public class FlashcardSet {
     private Map <String, String> set; //Structure representing Term - Definition pairs
@@ -48,7 +47,7 @@ public class FlashcardSet {
     public boolean ask(String question,String answer) {
         String correctAnswer = this.set.get(question); //Get the correct answer
         int numErrors = this.errors.get(question); //Check how many mistakes does the card has already
-        if (answer.equals(correctAnswer)) { //If the users answer was correct
+        if (answer.equalsIgnoreCase(correctAnswer)) { //If the users answer was correct
             return true;
         } else { //If the user's answer is just wrong
             this.errors.put(question,numErrors + 1); //Update the number of errors of the card
