@@ -1,9 +1,0 @@
-Input the action (add, remove, import, export, ask, log, hardest card, reset stats, exit):
-import
-File name:
-src/main/resources/capitals.txt
-196 cards have been loaded.
-Input the action (add, remove, import, export, ask, log, hardest card, reset stats, exit):
-log
-File Name:
-src/main/resources/dummylog.txt

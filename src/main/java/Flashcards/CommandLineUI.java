@@ -6,10 +6,17 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Command Line User Interface. Apart from reading and displaying also has built-in
+ * logging capabilities.
+ */
 public class CommandLineUI {
     private final Scanner in;
     private final ArrayList<String> log;
 
+    /**
+     * Constructor of the class. Initializes the input with a scanner in the standard input
+     */
     public CommandLineUI() {
         this.log = new ArrayList<>();
         this.in = new Scanner(System.in);
@@ -32,6 +39,10 @@ public class CommandLineUI {
         this.writeLog(message);
     }
 
+    /**
+     * Method to read, and log, the user input in the console
+     * @return Users input in the console (last line)
+     */
     public String read() {
         String reading = in.nextLine();
         writeLog(reading);
