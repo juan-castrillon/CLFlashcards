@@ -52,12 +52,12 @@ Then as soon as the program ends, (with the `exit` command), all the cards will 
 To add a card, just type the `add` command when prompted. Then, input the term and definition of the card
 The app will also tell you if you are typing in a card whose definition or term is already defined in a card in the set
 
-//GIF//
+![add](https://user-images.githubusercontent.com/64461123/92254058-9e9e3c80-eed0-11ea-996f-21ad8faf8870.gif)
 
 #### Removing cards manually
 To remove a card, type the `remove` command when prompted. Then, input the term of the card
 
-//GIF//
+![remove](https://user-images.githubusercontent.com/64461123/92254069-a1009680-eed0-11ea-96cd-17f5489bae21.gif)
 
 #### Adding cards from a file
 To add cards from a text file (.txt) its important that the file has the cards in the following format :
@@ -66,7 +66,7 @@ To add cards from a text file (.txt) its important that the file has the cards i
 ```
 For example :
 
-//IMAGE//
+![file](https://user-images.githubusercontent.com/64461123/92254064-9fcf6980-eed0-11ea-9edf-dd2fd1a3d765.png)
 
 Once the file is correctly formatted, just type the command `import` and then the path to the file. As an example, if you type :
 ```
@@ -74,7 +74,7 @@ src/main/resources/capitals.txt
 ```
 A preformatted file with the worlds capitals is provided to use the app.
 
-//GIF//
+![import](https://user-images.githubusercontent.com/64461123/92254066-a0680000-eed0-11ea-9396-8828a2706f3d.gif)
 
 #### Exporting cards to a file
 
@@ -87,7 +87,7 @@ some/path/to/save/cards.txt
 
 Specifying only the name (`cards.txt`) will create the file in the project directory.
 
-//GIF//
+![export](https://user-images.githubusercontent.com/64461123/92254063-9fcf6980-eed0-11ea-8d61-5ca441dd6172.gif)
 
 
 ### Learning
@@ -100,12 +100,12 @@ After reading an input, the program distinguishes 3 types of answer:
 2. An incorrect answer that is correct for another card
 3. An incorrect answer.
 
-//GIF//
+![ask](https://user-images.githubusercontent.com/64461123/92254062-9f36d300-eed0-11ea-86d3-5ae4f29637b1.gif)
 
 #### Hardest Card (s)
 When the command `hardest card` is used, the program shows the card (or cards) with the most mistakes
 
-//GIF//
+![hardest](https://user-images.githubusercontent.com/64461123/92254065-a0680000-eed0-11ea-8c42-e4ae964c24ed.gif)
 
 ### Other functions
 #### Reset statistics
@@ -124,7 +124,3 @@ path/to/log/log.txt
 ### Exiting the app
 
 To finish the program, just type the `exit` command.
-
-
-
-
